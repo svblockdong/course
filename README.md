@@ -5,4 +5,3 @@ Ethereum smart contract course
 
 现在是第一课的内容
 
-这里是王小花同学的第一次作业内容
