@@ -1,0 +1,41 @@
+pragma solidity ^0.4.14;
+
+contract Payroll{
+    uint salary = 1 ether;
+    address Lisa；
+    address Employee;
+    uint constant payDuration = 8 seconds;
+    uint lastPayday = now;
+   
+    function set(uint new salary) {
+      salary = newsalary * 200 wei;
+    }
+    
+    function set(address Employee) {
+       Lisa = Employee;
+    }
+    
+    function addFund() payable returns (uint) {
+        return this.balance;
+    }
+    
+    function calculateRunaway() returns(uint) {
+        return this.balance / salary;
+    }
+    
+    function hasEnoughFund() returns(bool) {
+        return calculateRunaway() > 0;
+    }
+    
+    function getPaid()  {
+        if (msg.sender != frank) {
+            revert();
+        }
+        uint nextPayDay = lastPayday + payDuration;
+        if (nextPayDay > now) {
+            revert();
+        }
+            lastPayday = nextPayDay;
+            frank.transfer(salary);
+    }
+}
